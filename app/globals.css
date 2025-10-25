@@ -4,11 +4,11 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-gray-900 via-primary to-secondary text-gray-100 antialiased;
+    @apply bg-white text-gray-900 antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-bold text-primary;
   }
   
   h1 {
@@ -26,11 +26,14 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow hover:shadow-glow-lg;
+    @apply bg-accent hover:bg-accent-hover text-white font-bold py-3 px-8 rounded-lg 
+           transition-all duration-300 transform hover:scale-105 
+           shadow-lg hover:shadow-glow-green;
   }
   
   .btn-secondary {
-    @apply bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 border border-accent/30;
+    @apply bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white 
+           font-semibold py-3 px-8 rounded-lg transition-all duration-300;
   }
   
   .container-custom {
@@ -41,57 +44,57 @@
     @apply py-16 md:py-24;
   }
 
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-glow hover:-translate-y-1;
+  .card-scientific {
+    @apply bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300 
+           hover:border-accent hover:shadow-lg;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent;
+  .text-gradient-green {
+    @apply bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent;
   }
 
-  .drop-shadow-glow {
-    filter: drop-shadow(0 0 8px rgba(20, 176, 137, 0.5));
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium 
+           bg-accent/10 text-accent border border-accent/20;
   }
 }
 
-/* Smooth scroll behavior */
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - тонкий і мінімалістичний */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e2122;
+  background: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #14b089, #10956f);
-  border-radius: 5px;
+  background: #14b089;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #14b089;
+  background: #10956f;
 }
 
-/* Remove default focus outline and add custom one */
+/* Focus стилі */
 *:focus-visible {
-  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-primary;
+  @apply outline-none ring-2 ring-accent ring-offset-2;
 }
 
-/* Glow animation for important elements */
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(20, 176, 137, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(20, 176, 137, 0.6);
-  }
+/* Декоративні елементи */
+.molecular-grid {
+  background-image: 
+    linear-gradient(rgba(20, 176, 137, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 176, 137, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
-.animate-glow {
-  animation: glow 3s ease-in-out infinite;
+.scientific-border {
+  border-image: linear-gradient(90deg, rgba(20, 176, 137, 0.3), transparent) 1;
 }
