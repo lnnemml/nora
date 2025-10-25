@@ -8,7 +8,6 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
-  // Додаємо ефект прокрутки
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
@@ -17,7 +16,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Блокуємо scroll коли відкрите меню
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden'
@@ -43,14 +41,14 @@ export default function Header() {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex justify-between items-center h-16 sm:h-20">
-          {/* Logo */}
+        <div className="flex justify-between items-center h-20 sm:h-24">
+          {/* Logo - збільшений розмір */}
           <Link 
             href="/" 
-            className="flex items-center space-x-3 group"
+            className="flex items-center space-x-4 group"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 transition-transform duration-300 group-hover:scale-110">
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-300 group-hover:scale-110">
               <Image 
                 src="/images/nora_logo.svg" 
                 alt="NORA Logo" 
@@ -60,9 +58,9 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-bold text-primary">NORA</span>
-              <span className="hidden xs:block text-[8px] sm:text-[9px] text-gray-500 tracking-wider uppercase font-mono">
-                Nootropic Research
+              <span className="text-2xl sm:text-3xl font-bold text-primary leading-none">NORA</span>
+              <span className="text-[10px] sm:text-xs text-gray-600 tracking-wide font-medium mt-0.5">
+                Nootropic Research Alliance
               </span>
             </div>
           </Link>
@@ -105,17 +103,15 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation - повноекранне меню */}
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <>
-            {/* Backdrop */}
             <div 
               className="fixed inset-0 bg-black/50 backdrop-blur-sm md:hidden animate-fade-in"
               onClick={() => setMobileMenuOpen(false)}
             />
             
-            {/* Menu */}
-            <div className="fixed inset-x-0 top-16 bottom-0 bg-white md:hidden overflow-y-auto animate-slide-up mobile-menu-enter">
+            <div className="fixed inset-x-0 top-20 sm:top-24 bottom-0 bg-white md:hidden overflow-y-auto animate-slide-up mobile-menu-enter">
               <div className="container-custom py-6">
                 {navigation.map((item, index) => (
                   <Link
