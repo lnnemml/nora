@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - чистий білий з зеленими акцентами */}
+      {/* Hero Section - з затримками анімацій */}
       <section className="relative bg-white section-padding overflow-hidden molecular-grid">
         {/* Декоративні елементи */}
         <div className="absolute inset-0 opacity-5">
@@ -14,36 +14,36 @@ export default function Home() {
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto">
             {/* Наукова бирка */}
-            <div className="text-center mb-8 animate-fade-in">
-              <span className="badge">
-                <svg className="w-3 h-3 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+            <div className="text-center mb-6 sm:mb-8 animate-fade-in">
+              <span className="badge text-xs sm:text-sm">
+                <svg className="w-3 h-3 mr-1.5 animate-pulse-slow" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
                 Pharmaceutical-Grade Nootropic
               </span>
             </div>
 
-            <h1 className="text-center mb-6 leading-tight text-primary animate-fade-in">
+            <h1 className="text-center mb-4 sm:mb-6 leading-tight text-primary animate-fade-in-up px-4" style={{animationDelay: '0.1s'}}>
               Cognitive Enhancement
               <br />
               <span className="text-gradient-green">Without Compromise</span>
             </h1>
             
-            <p className="text-center text-xl md:text-2xl mb-4 text-gray-700 max-w-3xl mx-auto animate-fade-in">
+            <p className="text-center text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-gray-700 max-w-3xl mx-auto animate-fade-in-up px-4" style={{animationDelay: '0.2s'}}>
               NORA delivers <strong className="text-accent">sustained focus</strong>, 
               <strong className="text-accent"> motivation</strong>, and 
               <strong className="text-accent"> mental stamina</strong> — 
               backed by decades of research.
             </p>
             
-            <p className="text-center text-lg text-gray-600 mb-10 animate-fade-in">
+            <p className="text-center text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 animate-fade-in-up px-4" style={{animationDelay: '0.3s'}}>
               Bromantane MCT Spray: Precision-engineered cognitive support for high performers
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16 animate-fade-in-up px-4" style={{animationDelay: '0.4s'}}>
               <Link 
                 href="/checkout" 
-                className="btn-primary text-base group inline-flex items-center justify-center"
+                className="btn-primary btn-ripple text-base group inline-flex items-center justify-center"
               >
                 <span>Start Your Trial</span>
                 <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,25 +54,31 @@ export default function Home() {
                 href="#how-it-works" 
                 className="btn-secondary inline-flex items-center justify-center"
               >
-                <svg className="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="mr-2 w-4 h-4 icon-hover" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
                 View Research
               </a>
             </div>
             
-            {/* Наукові показники */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {/* Наукові показники - з stagger анімацією */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto px-4">
               {[
                 { value: '8h', label: 'Duration', icon: '⏱' },
                 { value: '0', label: 'Crashes', icon: '📊' },
                 { value: '99.4%', label: 'Purity', icon: '🔬' },
                 { value: '30ml', label: 'Volume', icon: '💧' }
               ].map((stat, idx) => (
-                <div key={idx} className="card-scientific text-center group">
-                  <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">{stat.icon}</div>
-                  <div className="text-3xl font-bold text-accent mb-1">{stat.value}</div>
-                  <div className="text-sm text-gray-600 font-mono uppercase tracking-wide">{stat.label}</div>
+                <div 
+                  key={idx} 
+                  className="card-scientific text-center group animate-scale-in"
+                  style={{animationDelay: `${0.5 + idx * 0.1}s`}}
+                >
+                  <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 transition-transform animate-bounce-subtle">
+                    {stat.icon}
+                  </div>
+                  <div className="text-2xl sm:text-3xl font-bold text-accent mb-1">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-gray-600 font-mono uppercase tracking-wide">{stat.label}</div>
                 </div>
               ))}
             </div>
