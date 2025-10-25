@@ -17,7 +17,7 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/public/images/nora_logo.svg" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">N</span>
             </div>
