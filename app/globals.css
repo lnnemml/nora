@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 antialiased;
+    @apply bg-gradient-to-br from-gray-900 via-primary to-secondary text-gray-100 antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -26,11 +26,11 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+    @apply bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-glow hover:shadow-glow-lg;
   }
   
   .btn-secondary {
-    @apply bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+    @apply bg-gradient-to-r from-secondary to-primary hover:from-primary hover:to-secondary text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300 border border-accent/30;
   }
   
   .container-custom {
@@ -40,6 +40,18 @@
   .section-padding {
     @apply py-16 md:py-24;
   }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-glow hover:-translate-y-1;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent;
+  }
+
+  .drop-shadow-glow {
+    filter: drop-shadow(0 0 8px rgba(20, 176, 137, 0.5));
+  }
 }
 
 /* Smooth scroll behavior */
@@ -47,7 +59,39 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e2122;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #14b089, #10956f);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14b089;
+}
+
 /* Remove default focus outline and add custom one */
 *:focus-visible {
-  @apply outline-none ring-2 ring-accent ring-offset-2;
+  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-primary;
+}
+
+/* Glow animation for important elements */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(20, 176, 137, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(20, 176, 137, 0.6);
+  }
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
 }
