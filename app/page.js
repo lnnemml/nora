@@ -4,49 +4,73 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary via-primary-dark to-primary-light text-white section-padding">
-        <div className="container-custom">
+      <section className="relative bg-gradient-to-br from-primary via-secondary to-primary-dark text-white section-padding overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-light rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1.5s'}}></div>
+        </div>
+
+        <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
+            {/* Product Badge */}
+            <div className="inline-flex items-center space-x-2 bg-accent/10 border border-accent/30 rounded-full px-6 py-2 mb-6 backdrop-blur-sm">
+              <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+              <span className="text-sm font-semibold text-accent uppercase tracking-wider">
+                NORA
+              </span>
+            </div>
+
             <h1 className="mb-6 leading-tight">
-              Mental Endurance of the New Generation
+              Mental Endurance of the{' '}
+              <span className="text-gradient">New Generation</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-4 text-gray-100">
-              Focus. Energy. Mental Stamina. <span className="text-accent font-semibold">Without Crashes.</span>
+            
+            <p className="text-xl md:text-2xl mb-4 text-gray-200">
+              Focus. Energy. Mental Stamina.{' '}
+              <span className="text-accent font-bold">Without Crashes.</span>
             </p>
-            <p className="text-lg md:text-xl mb-8 text-gray-200">
+            
+            <p className="text-lg md:text-xl mb-8 text-gray-300">
               Bromantane MCT Spray — the transmission for your brain, not another energy drink
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/checkout" className="btn-primary text-lg">
-                Get Your Bottle Now
+              <Link 
+                href="/checkout" 
+                className="btn-primary text-lg group"
+              >
+                <span>Get Your Bottle Now</span>
+                <svg className="inline-block ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </Link>
-              <a href="#how-it-works" className="bg-white text-primary hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+              <a 
+                href="#how-it-works" 
+                className="bg-white/10 backdrop-blur-sm border-2 border-accent hover:bg-accent/20 text-white font-semibold py-3 px-8 rounded-xl transition-all duration-300"
+              >
                 Learn More
               </a>
             </div>
             
             {/* Trust Badges */}
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-accent">8+</div>
-                <div className="text-sm text-gray-300">Hours of Focus</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-accent">0</div>
-                <div className="text-sm text-gray-300">Crashes or Jitters</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-accent">100%</div>
-                <div className="text-sm text-gray-300">Legal & Safe</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-accent">30ml</div>
-                <div className="text-sm text-gray-300">Per Bottle</div>
-              </div>
+              {[
+                { value: '8+', label: 'Hours of Focus' },
+                { value: '0', label: 'Crashes or Jitters' },
+                { value: '100%', label: 'Legal & Safe' },
+                { value: '30ml', label: 'Per Bottle' }
+              ].map((stat, idx) => (
+                <div key={idx} className="card-hover bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-accent/20">
+                  <div className="text-3xl font-bold text-gradient">{stat.value}</div>
+                  <div className="text-sm text-gray-400 mt-1">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </section>
+
+    
 
       {/* Problem Section */}
       <section className="section-padding bg-gray-50">
