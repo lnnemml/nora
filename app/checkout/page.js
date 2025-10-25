@@ -230,9 +230,9 @@ export default function Checkout() {
 
                   <p className="text-xs text-center text-gray-500 mt-4">
                     By completing this purchase you agree to our{' '}
-                    <a href="#" className="text-accent hover:text-accent-hover underline">Terms of Service</a>
+                    <Link href="/terms" className="text-accent hover:text-accent-hover underline">Terms of Service</Link>
                     {' '}and{' '}
-                    <a href="#" className="text-accent hover:text-accent-hover underline">Privacy Policy</a>
+                    <Link href="/privacy" className="text-accent hover:text-accent-hover underline">Privacy Policy</Link>
                   </p>
                 </form>
               </div>
