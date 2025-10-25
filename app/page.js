@@ -69,7 +69,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-
+        </section>
     
 
       {/* Problem Section */}
