@@ -7,12 +7,12 @@ export default function Footer() {
   const footerLinks = {
     navigation: [
       { name: 'Home', href: '/' },
-      { name: 'Science', href: '/#how-it-works' },
+      { name: 'How It Works', href: '/#how-it-works' },
       { name: 'FAQ', href: '/faq' },
       { name: 'Contact', href: '/contact' },
     ],
     product: [
-      { name: 'Buy NORA', href: '/checkout' },
+      { name: 'Buy NeuroDrive', href: '/checkout' },
       { name: 'Dosage Guide', href: '/faq#dosage' },
       { name: 'Safety Info', href: '/faq#safety' },
     ],
@@ -26,27 +26,25 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-gray-200">
       <div className="container-custom py-10 sm:py-12">
-        {/* Mobile: Стековий layout */}
-        {/* Desktop: Grid layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
-          {/* Brand - повна ширина на мобільному */}
+          {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center space-x-3 mb-4 group w-fit">
               <div className="relative w-10 h-10 transition-transform duration-300 group-hover:scale-110">
                 <Image 
-                  src="/images/nora_logo.svg" 
-                  alt="NORA Logo" 
+                  src="/images/neurodrive_logo.svg" 
+                  alt="NeuroDrive Logo" 
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold text-primary">NORA</span>
+              <span className="text-xl font-bold text-primary">NeuroDrive</span>
             </Link>
             <p className="text-sm text-gray-600 mb-2 font-mono">
-              Nootropic Alliance Research
+              Adaptogenic Performance Formula
             </p>
             <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
-              Pharmaceutical-grade cognitive enhancement for high performers.
+              Pharmaceutical-grade cognitive support for high performers.
             </p>
           </div>
 
@@ -120,7 +118,7 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-xs text-gray-500 text-center sm:text-left">
-            &copy; {currentYear} NORA. All rights reserved.
+            &copy; {currentYear} NeuroDrive. All rights reserved.
           </p>
           
           {/* Trust badges */}
@@ -146,12 +144,13 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Disclaimer - краща читабельність на мобільному */}
+        {/* Disclaimer */}
         <div className="mt-6 pt-6 border-t border-gray-200">
           <p className="text-xs text-gray-500 leading-relaxed text-center sm:text-left">
-            <strong className="font-semibold">Medical Disclaimer:</strong> These statements have not been evaluated by regulatory authorities. 
+            <strong className="font-semibold">Disclaimer:</strong> These statements have not been evaluated by regulatory authorities. 
             This product is not intended to diagnose, treat, cure, or prevent any disease. 
-            For research purposes only. Consult with a healthcare professional before use.
+            For dietary supplementation. Consult with a healthcare professional before use. 
+            Contains adaptogenic amino derivative complex.
           </p>
         </div>
       </div>
