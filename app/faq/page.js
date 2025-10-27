@@ -7,76 +7,84 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "What is Bromantane?",
-      answer: "Bromantane is a unique actoprotector and anxiolytic stimulant developed in Russia in the 1980s. It increases dopamine production naturally by upregulating tyrosine hydroxylase, providing mental energy and motivation without the typical stimulant side effects. It's been used by athletes, military personnel, and now biohackers for cognitive enhancement."
+      question: "What is NeuroDrive?",
+      answer: "NeuroDrive is a proprietary adaptogenic cognitive support formula delivered as sublingual drops. It contains a synthetic adaptogenic amino derivative complex (500mg per serving) designed to support motivation, mental drive, and sustained energy throughout your day. Our formula works with your brain's natural neurochemistry rather than forcing artificial stimulation."
+    },
+    {
+      question: "What's in the formula?",
+      answer: "NeuroDrive contains a proprietary adaptogenic amino derivative blend dissolved in pharmaceutical-grade MCT oil for optimal absorption. The primary active ingredient is bromantane derivative (80mg/ml concentration), a synthetic actoprotector compound that supports natural dopamine pathways. Each 30ml bottle contains 2400mg of active compound. See full ingredient list on product label."
     },
     {
       question: "Is it legal and safe?",
-      answer: "Yes. Bromantane is legal in most countries as a dietary supplement. It was approved as a pharmaceutical in Russia for treating asthenia (chronic fatigue) and has decades of safety data. It's non-addictive and has a favorable safety profile when used as directed. However, it was banned in competitive sports (WADA) due to its performance-enhancing effects."
+      answer: "Yes. NeuroDrive is positioned as a dietary supplement for research and personal cognitive optimization use. The formula has decades of safety research behind it and is non-addictive with a favorable safety profile when used as directed. It's legal in most countries as a supplement. Note: The active compound is on the WADA prohibited list for competitive athletes."
     },
     {
-      question: "How do I use NORA Bromantane Spray?",
-      answer: "Shake the bottle well. Spray 1-3 sprays under your tongue (sublingual), hold for 60-90 seconds, then swallow. Start with 1 spray to assess tolerance. Most users find 2-3 sprays (approximately 80-120mg) optimal. Take in the morning or early afternoon on an empty stomach for best results."
+      question: "How do I use NeuroDrive Sublingual Drops?",
+      answer: "Shake the bottle well. Place 2-4 drops under your tongue (sublingual), hold for 60-90 seconds, then swallow. Start with 2 drops to assess tolerance. Most users find 2-4 drops (approximately 80-160mg) optimal. Take in the morning or early afternoon on an empty stomach for best results. The sublingual delivery ensures rapid absorption."
     },
     {
       question: "When will I feel the effects?",
-      answer: "Most users notice effects within 15-30 minutes when taken sublingually. The full effect builds over the first week of use. Some report immediate benefits on day one, while others experience gradual improvement over 3-7 days as the compound accumulates and optimizes neurotransmitter systems."
+      answer: "Most users notice effects within 20-40 minutes when taken sublingually. The full effect builds over the first week of use. Some report immediate benefits on day one, while others experience gradual improvement over 3-7 days as the compound accumulates and optimizes neurotransmitter systems."
     },
     {
       question: "How long do the effects last?",
-      answer: "Effects typically last 6-10 hours, with many users reporting sustained mental energy throughout their workday. Unlike caffeine or other stimulants, there's no sharp decline or crash. The compound has a half-life of around 11 hours, providing stable coverage."
+      answer: "Effects typically last 8-12 hours, with many users reporting sustained mental energy throughout their workday. Unlike caffeine or other stimulants, there's no sharp decline or crash. The compound provides stable cognitive support with a smooth offset."
     },
     {
       question: "Can I take it every day?",
-      answer: "Yes, bromantane can be used daily. Many users cycle it (5 days on, 2 days off) or use it on work days only. There's no evidence of physical dependence or withdrawal. Some prefer daily use for consistent benefits, others use it strategically for demanding periods."
+      answer: "Yes, NeuroDrive can be used daily. Many users cycle it (5 days on, 2 days off) or use it on work days only. There's no evidence of physical dependence or withdrawal. Some prefer daily use for consistent benefits, others use it strategically for demanding periods. Listen to your body and adjust accordingly."
     },
     {
       question: "Will I build tolerance?",
-      answer: "Unlike traditional stimulants, bromantane doesn't cause significant tolerance buildup. It works by enhancing your brain's natural dopamine production rather than depleting neurotransmitter stores. Most users maintain effectiveness over months of use. Taking occasional breaks (1-2 days per week) can help maintain peak efficacy."
+      answer: "Unlike traditional stimulants, NeuroDrive's adaptogenic mechanism doesn't cause significant tolerance buildup. It works by enhancing your brain's natural dopamine production rather than depleting neurotransmitter stores. Most users maintain effectiveness over months of use. Taking occasional breaks (1-2 days per week) can help maintain peak efficacy."
     },
     {
       question: "Are there any side effects?",
-      answer: "Bromantane is generally well-tolerated. Rare side effects may include mild headaches (usually resolved with hydration), difficulty falling asleep if taken too late in the day, or mild digestive discomfort. Starting with a low dose (1 spray) helps minimize any adjustment period. Do not use if you have bipolar disorder without medical supervision."
+      answer: "NeuroDrive is generally well-tolerated. Rare side effects may include mild headaches (usually resolved with hydration), difficulty falling asleep if taken too late in the day, or mild digestive discomfort. Starting with a low dose (2 drops) helps minimize any adjustment period. Do not use if you have bipolar disorder without medical supervision."
     },
     {
       question: "How is this different from coffee or energy drinks?",
-      answer: "Coffee provides a quick energy spike by blocking adenosine receptors, often followed by jitters and crashes. Bromantane works differently — it increases your brain's ability to produce dopamine naturally, providing calm, sustained energy without anxiety or crashes. It's stimulating and calming simultaneously."
+      answer: "Coffee provides a quick energy spike by blocking adenosine receptors, often followed by jitters and crashes. NeuroDrive works differently — it supports your brain's ability to produce dopamine naturally, providing calm, sustained energy without anxiety or crashes. It's stimulating and calming simultaneously, giving you focused drive rather than jittery overstimulation."
     },
     {
-      question: "How is this different from Modafinil?",
-      answer: "Modafinil is a powerful wakefulness agent that works through multiple mechanisms and requires a prescription in most countries. It can be too strong for daily use and may cause side effects like insomnia or anxiety. Bromantane is milder, legal, over-the-counter, and provides motivation + focus without the overstimulation."
+      question: "How is this different from Modafinil or prescription stimulants?",
+      answer: "Modafinil is a powerful wakefulness agent that requires a prescription in most countries and can be too strong for daily use. NeuroDrive is milder, legal, over-the-counter, and provides motivation + focus without the overstimulation. It's designed for daily cognitive optimization rather than treating sleep disorders or ADHD."
     },
     {
-      question: "Why MCT oil spray vs capsules?",
-      answer: "Sublingual MCT spray offers several advantages: (1) Faster absorption through mucous membranes, (2) Flexible dosing — you control the exact amount, (3) Higher bioavailability than oral capsules, (4) Bypasses first-pass liver metabolism, (5) Convenient and portable. Capsules offer fixed doses and slower onset."
+      question: "Why sublingual drops vs capsules?",
+      answer: "Sublingual drops offer several advantages: (1) Faster absorption through mucous membranes (20-40min onset vs 60-90min for capsules), (2) Flexible dosing — you control the exact amount drop by drop, (3) Higher bioavailability than oral capsules, (4) Bypasses first-pass liver metabolism, (5) Convenient and portable. Sublingual delivery is the preferred method for this compound."
     },
     {
-      question: "What's the concentration?",
-      answer: "Our NORA Bromantane Spray contains 80mg/ml of pharmaceutical-grade bromantane dissolved in MCT oil. Each 30ml bottle contains approximately 2400mg total. Each spray delivers approximately 40mg (depending on spray mechanism), so 1-3 sprays gives you 40-120mg dosing range."
+      question: "What's the concentration and dosing?",
+      answer: "NeuroDrive Sublingual Drops contain 80mg/ml of proprietary adaptogenic amino derivative complex dissolved in MCT oil. Each 30ml bottle contains approximately 2400mg total. Each drop delivers approximately 20mg (depending on dropper), so 2-4 drops gives you a 40-160mg dosing range. Start low and adjust based on your response."
     },
     {
       question: "How should I store it?",
-      answer: "Store in a cool, dry place away from direct sunlight. Room temperature is fine. Refrigeration is not necessary but may extend shelf life. Shake well before each use as some settling is normal with oil-based formulations."
+      answer: "Store in a cool, dry place away from direct sunlight. Room temperature is fine. Refrigeration is not necessary but may extend shelf life. Shake well before each use as some settling is normal with oil-based formulations. Keep tightly sealed when not in use."
     },
     {
       question: "Can I combine it with other nootropics?",
-      answer: "Bromantane stacks well with many nootropics. Popular combinations include: choline sources (Alpha-GPC, CDP-Choline), racetams (Phenylpiracetam, Noopept), L-Tyrosine, or adaptogens. Avoid combining with strong stimulants initially. Always start conservatively when stacking."
+      answer: "NeuroDrive stacks well with many nootropics. Popular combinations include: choline sources (Alpha-GPC, CDP-Choline), racetams (Phenylpiracetam, Noopept), L-Tyrosine, or adaptogens like Rhodiola. Avoid combining with strong stimulants initially. Always start conservatively when stacking supplements."
     },
     {
       question: "What if it doesn't work for me?",
-      answer: "We offer a 14-day money-back guarantee. Approximately 10-20% of users may be non-responders due to individual biochemistry. If you don't experience benefits within 7 days of use at the recommended dose (2-3 sprays daily), contact us for a full refund. Your satisfaction is guaranteed."
+      answer: "We offer a 14-day money-back guarantee. Approximately 10-20% of users may be non-responders due to individual biochemistry. If you don't experience benefits within 7 days of use at the recommended dose (2-4 drops daily), contact us for a full refund. Your satisfaction is guaranteed."
     },
     {
-      question: "Is there scientific research on Bromantane?",
-      answer: "Yes, bromantane has been studied extensively since the 1980s. Research shows it increases dopamine and serotonin production, reduces anxiety, improves physical performance, and enhances cognitive function. It's been clinically approved in Russia for treating asthenia and has safety data from decades of use."
+      question: "Is there scientific research on the formula?",
+      answer: "Yes, the primary active compound (bromantane derivative) has been studied extensively since the 1980s. Research shows it supports dopamine and serotonin production, reduces anxiety, improves physical performance, and enhances cognitive function. It has been clinically studied for treating asthenia and has safety data from decades of use in various populations."
     },
     {
-      question: "Who should NOT use Bromantane?",
+      question: "Who should NOT use NeuroDrive?",
       answer: "Avoid if you: (1) Are pregnant or breastfeeding, (2) Have bipolar disorder or psychotic conditions (can trigger hypomania), (3) Are under 18 years old, (4) Are taking MAO inhibitors, (5) Have severe cardiovascular conditions. Consult a healthcare provider if you have any medical conditions or take prescription medications."
     },
     {
       question: "How long does one bottle last?",
-      answer: "A 30ml bottle lasts 10-30 days depending on your dosage. At the standard dose of 2-3 sprays per day, expect approximately 15-20 days per bottle. Heavy users (3+ sprays daily) may use it faster, while conservative users (1-2 sprays) can extend it to a month."
+      answer: "A 30ml bottle lasts 15-30 days depending on your dosage. At the standard dose of 2-4 drops per day, expect approximately 15-25 days per bottle. Conservative users (2 drops daily) can extend it to a month, while those using higher doses may use it faster."
+    },
+    {
+      question: "Is this a pharmaceutical drug or supplement?",
+      answer: "NeuroDrive is formulated and marketed as a dietary supplement for cognitive support, not as a pharmaceutical drug. It is intended for research and personal optimization use. It is not intended to diagnose, treat, cure, or prevent any disease. The statements about this product have not been evaluated by the FDA."
     }
   ]
 
@@ -88,7 +96,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h1>
           <p className="text-center text-xl text-gray-600 mb-12">
-            Everything you need to know about NORA Bromantane Spray
+            Everything you need to know about NeuroDrive Sublingual Drops
           </p>
 
           <div className="space-y-4">
