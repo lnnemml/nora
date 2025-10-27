@@ -98,6 +98,26 @@ module.exports = {
       screens: {
         'xs': '475px',
       },
+      animation: {
+  'slide-in-left': 'slideInLeft 0.5s ease-out',
+  'slide-up': 'slideUp 0.4s ease-out',
+  'scale-in': 'scaleIn 0.3s ease-out',
+  'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+},
+keyframes: {
+  slideInLeft: {
+    '0%': { opacity: '0', transform: 'translateX(-100px)' },
+    '100%': { opacity: '1', transform: 'translateX(0)' },
+  },
+  slideUp: {
+    '0%': { opacity: '0', transform: 'translateY(100px)' },
+    '100%': { opacity: '1', transform: 'translateY(0)' },
+  },
+  scaleIn: {
+    '0%': { opacity: '0', transform: 'scale(0.8)' },
+    '100%': { opacity: '1', transform: 'scale(1)' },
+  },
+}
     },
   },
   plugins: [],
