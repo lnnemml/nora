@@ -1,10 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 export default function Checkout() {
   const [quantity, setQuantity] = useState(1)
+  const [stockCount, setStockCount] = useState(47)
   const [formData, setFormData] = useState({
     email: '',
     firstName: '',
@@ -18,6 +19,14 @@ export default function Checkout() {
 
   const pricePerBottle = 34.99 // USD
   const shippingCost = 11.00 // USD
+  
+  // Simulate stock decreasing
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStockCount(prev => Math.max(35, prev - 1))
+    }, 180000) // Every 3 minutes
+    return () => clearInterval(interval)
+  }, [])
   
   // Bulk pricing logic - EmergingEra style
   const getBulkDiscount = (qty) => {
@@ -53,19 +62,51 @@ export default function Checkout() {
           <h1 className="text-center mb-4 text-primary">
             Secure Checkout
           </h1>
-          <p className="text-center text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 px-4">
+          <p className="text-center text-lg sm:text-xl text-gray-600 mb-8 sm:mb-10 px-4">
             You're one step away from unlocking your mental potential
           </p>
 
-          {/* URGENCY BAR - EmergingEra style */}
-          <div className="mb-8 p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
+          {/* Progress Indicator */}
+          <div className="mb-8 sm:mb-10">
+            <div className="flex items-center justify-center space-x-2 sm:space-x-4">
+              <div className="flex items-center">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent text-white rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
+                  1
+                </div>
+                <span className="ml-2 font-semibold text-gray-900 text-sm sm:text-base hidden sm:inline">Information</span>
+                <span className="ml-2 font-semibold text-gray-900 text-sm sm:hidden">Info</span>
+              </div>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <div className="flex items-center">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
+                  2
+                </div>
+                <span className="ml-2 font-medium text-gray-500 text-sm sm:text-base">Payment</span>
+              </div>
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <div className="flex items-center">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-200 text-gray-600 rounded-full flex items-center justify-center font-bold text-sm sm:text-base">
+                  3
+                </div>
+                <span className="ml-2 font-medium text-gray-500 text-sm sm:text-base hidden sm:inline">Complete</span>
+                <span className="ml-2 font-medium text-gray-500 text-sm sm:hidden">Done</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Urgency Banner - ENHANCED */}
+          <div className="mb-8 p-4 sm:p-5 bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 rounded-lg shadow-md">
             <div className="flex items-center">
-              <svg className="w-6 h-6 text-red-600 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-6 h-6 sm:w-7 sm:h-7 text-red-600 mr-3 flex-shrink-0 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
               </svg>
               <div>
-                <p className="text-red-800 font-bold">⚡ First Batch Selling Fast!</p>
-                <p className="text-red-700 text-sm">Only 47 bottles remaining • Next production in 4 weeks</p>
+                <p className="text-red-800 font-bold text-base sm:text-lg">⚡ First Batch Selling Fast!</p>
+                <p className="text-red-700 text-sm sm:text-base">Only <span className="font-bold">{stockCount} bottles</span> remaining • Next production in 4 weeks</p>
               </div>
             </div>
           </div>
