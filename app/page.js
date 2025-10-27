@@ -24,11 +24,11 @@ export default function Home() {
   // Simulate recent purchases notification
   useEffect(() => {
     const locations = [
-      { city: 'Kyiv', country: 'Ukraine', flag: '🇺🇦' },
-      { city: 'Lviv', country: 'Ukraine', flag: '🇺🇦' },
-      { city: 'Odesa', country: 'Ukraine', flag: '🇺🇦' },
-      { city: 'Dnipro', country: 'Ukraine', flag: '🇺🇦' },
-      { city: 'Kharkiv', country: 'Ukraine', flag: '🇺🇦' },
+       { city: 'Berlin', country: 'Germany', flag: '🇩🇪' },
+  { city: 'London', country: 'UK', flag: '🇬🇧' },
+  { city: 'Amsterdam', country: 'Netherlands', flag: '🇳🇱' },
+  { city: 'Paris', country: 'France', flag: '🇫🇷' },
+  { city: 'Prague', country: 'Czech Republic', flag: '🇨🇿' },
       { city: 'Warsaw', country: 'Poland', flag: '🇵🇱' },
       { city: 'Berlin', country: 'Germany', flag: '🇩🇪' },
       { city: 'London', country: 'UK', flag: '🇬🇧' },
@@ -361,6 +361,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section id="how-it-works" className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-center mb-4 text-primary">
+              How NeuroDrive Works
+            </h2>
+            <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
+              A sophisticated adaptogenic mechanism that supports your brain's natural performance
+            </p>
 
             {/* Механізм дії */}
             <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-200">
