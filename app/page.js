@@ -1,11 +1,115 @@
+'use client'
+
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 
 export default function Home() {
+  const [stockCount, setStockCount] = useState(47)
+  const [viewersCount, setViewersCount] = useState(23)
+  const [showNotification, setShowNotification] = useState(false)
+  const [recentPurchase, setRecentPurchase] = useState(null)
+
+  // Simulate live viewers count
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setViewersCount(prev => {
+        const change = Math.floor(Math.random() * 5) - 2
+        const newCount = prev + change
+        return Math.max(15, Math.min(35, newCount))
+      })
+    }, 8000)
+    return () => clearInterval(interval)
+  }, [])
+
+  // Simulate recent purchases notification
+  useEffect(() => {
+    const locations = [
+      { city: 'Kyiv', country: 'Ukraine', flag: '🇺🇦' },
+      { city: 'Lviv', country: 'Ukraine', flag: '🇺🇦' },
+      { city: 'Odesa', country: 'Ukraine', flag: '🇺🇦' },
+      { city: 'Dnipro', country: 'Ukraine', flag: '🇺🇦' },
+      { city: 'Kharkiv', country: 'Ukraine', flag: '🇺🇦' },
+      { city: 'Warsaw', country: 'Poland', flag: '🇵🇱' },
+      { city: 'Berlin', country: 'Germany', flag: '🇩🇪' },
+      { city: 'London', country: 'UK', flag: '🇬🇧' },
+      { city: 'Amsterdam', country: 'Netherlands', flag: '🇳🇱' },
+      { city: 'Paris', country: 'France', flag: '🇫🇷' },
+    ]
+    
+    const showPurchase = () => {
+      const location = locations[Math.floor(Math.random() * locations.length)]
+      const bottles = [1, 2, 3, 5][Math.floor(Math.random() * 4)]
+      const minutes = Math.floor(Math.random() * 45) + 5
+      
+      setRecentPurchase({ location, bottles, minutes })
+      setShowNotification(true)
+      
+      setTimeout(() => setShowNotification(false), 6000)
+    }
+    
+    const interval = setInterval(showPurchase, 20000)
+    setTimeout(showPurchase, 5000)
+    
+    return () => clearInterval(interval)
+  }, [])
+
+  // Simulate stock decreasing
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStockCount(prev => Math.max(35, prev - 1))
+    }, 180000) // Every 3 minutes
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Recent Purchase Notification */}
+      {showNotification && recentPurchase && (
+        <div className="fixed bottom-6 left-6 z-50 animate-slide-in-left">
+          <div className="bg-white border-2 border-accent shadow-2xl rounded-xl p-4 max-w-sm">
+            <div className="flex items-start space-x-3">
+              <div className="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center">
+                <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-gray-900">
+                  {recentPurchase.location.flag} Someone from {recentPurchase.location.city}
+                </p>
+                <p className="text-xs text-gray-600 mt-0.5">
+                  Purchased {recentPurchase.bottles} bottle{recentPurchase.bottles > 1 ? 's' : ''} • {recentPurchase.minutes}min ago
+                </p>
+              </div>
+              <button 
+                onClick={() => setShowNotification(false)}
+                className="flex-shrink-0 text-gray-400 hover:text-gray-600"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Sticky Floating CTA Bar - Mobile Only */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white border-t-2 border-accent shadow-2xl p-4 animate-slide-up">
+        <div className="flex items-center justify-between space-x-3">
+          <div className="flex-1 min-w-0">
+            <p className="text-xs font-semibold text-gray-900">Limited Stock: {stockCount} left</p>
+            <p className="text-xs text-gray-600">⚡ {viewersCount} people viewing</p>
+          </div>
+          <Link href="/checkout" className="btn-primary py-3 px-6 text-sm whitespace-nowrap">
+            Claim Now
+          </Link>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="relative bg-white section-padding overflow-hidden molecular-grid">
-        {/* Декоративні елементи */}
+        {/* Decorative elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-96 h-96 bg-accent rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent rounded-full blur-3xl animate-float" style={{animationDelay: '1.5s'}}></div>
@@ -13,20 +117,34 @@ export default function Home() {
 
         <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto">
-            {/* Наукова бирка + SCARCITY */}
+            {/* Live Indicators Row */}
             <div className="text-center mb-6 sm:mb-8 animate-fade-in space-y-3">
+              {/* Main Badge */}
               <span className="badge text-xs sm:text-sm">
                 <svg className="w-3 h-3 mr-1.5 animate-pulse-slow" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
                 Pharmaceutical-Grade Adaptogenic Formula
               </span>
-              {/* SCARCITY BADGE - EmergingEra style */}
-              <div className="inline-flex items-center px-4 py-2 bg-red-50 border border-red-200 rounded-full text-xs font-semibold text-red-700 animate-pulse">
-                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                </svg>
-                Limited First Batch • Only 47 Units Remaining
+
+              {/* Urgency Badges Row */}
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                {/* Stock Counter */}
+                <div className="inline-flex items-center px-4 py-2 bg-red-50 border-2 border-red-200 rounded-full text-xs font-bold text-red-700 animate-pulse">
+                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                  </svg>
+                  Only {stockCount} Units Left • First Batch
+                </div>
+
+                {/* Live Viewers */}
+                <div className="inline-flex items-center px-4 py-2 bg-accent/10 border-2 border-accent/30 rounded-full text-xs font-semibold text-accent">
+                  <span className="relative flex h-2 w-2 mr-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                  </span>
+                  {viewersCount} People Viewing Now
+                </div>
               </div>
             </div>
 
@@ -50,12 +168,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16 animate-fade-in-up px-4" style={{animationDelay: '0.4s'}}>
               <Link 
                 href="/checkout" 
-                className="btn-primary btn-ripple text-base group inline-flex items-center justify-center"
+                className="btn-primary btn-ripple text-base group inline-flex items-center justify-center relative overflow-hidden"
               >
-                <span>Claim Your Bottle Now</span>
-                <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="relative z-10">Claim Your Bottle Now</span>
+                <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
+                {/* Shine effect */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
               </Link>
               <a 
                 href="#how-it-works" 
@@ -68,7 +188,7 @@ export default function Home() {
               </a>
             </div>
             
-            {/* Наукові показники - з stagger анімацією */}
+            {/* Scientific metrics */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto px-4">
               {[
                 { value: '8-12h', label: 'Duration', icon: '⏱' },
@@ -78,10 +198,10 @@ export default function Home() {
               ].map((stat, idx) => (
                 <div 
                   key={idx} 
-                  className="card-scientific text-center group animate-scale-in"
+                  className="card-scientific text-center group animate-scale-in hover:border-accent hover:shadow-glow-green"
                   style={{animationDelay: `${0.5 + idx * 0.1}s`}}
                 >
-                  <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 transition-transform animate-bounce-subtle">
+                  <div className="text-2xl sm:text-3xl mb-2 group-hover:scale-110 transition-transform">
                     {stat.icon}
                   </div>
                   <div className="text-2xl sm:text-3xl font-bold text-accent mb-1">{stat.value}</div>
@@ -116,24 +236,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOCIAL PROOF BAR - NEW */}
-      <section className="bg-accent text-white py-3">
+      {/* ENHANCED SOCIAL PROOF BAR */}
+      <section className="bg-gradient-to-r from-accent to-accent-light text-white py-4">
         <div className="container-custom">
-          <div className="flex items-center justify-center space-x-8 text-sm">
+          <div className="flex flex-col md:flex-row items-center justify-center md:space-x-12 space-y-3 md:space-y-0 text-sm">
             <div className="flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-6 h-6 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
               </svg>
               <span><strong>1,247+</strong> satisfied customers</span>
             </div>
-            <div className="hidden md:flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex items-center">
+              <svg className="w-6 h-6 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span><strong>4.8/5</strong> average rating</span>
+              <span><strong>4.8/5</strong> average rating (247 reviews)</span>
             </div>
-            <div className="hidden sm:flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <div className="flex items-center">
+              <svg className="w-6 h-6 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
               </svg>
               <span>Trusted by biohackers worldwide</span>
@@ -142,7 +262,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem Section */}
+      {/* Problem Section - ENHANCED */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
@@ -154,83 +274,83 @@ export default function Home() {
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="card-scientific border-l-4 border-red-500">
+              <div className="card-scientific border-l-4 border-red-500 hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
                   <div className="text-3xl mr-3">☕</div>
                   <h3 className="text-xl font-semibold text-gray-900">Coffee</h3>
                 </div>
                 <ul className="space-y-2 text-gray-600 text-sm">
                   <li className="flex items-start">
-                    <span className="text-red-500 mr-2">✗</span>
+                    <span className="text-red-500 mr-2 text-lg">✗</span>
                     <span>Anxiety & jitters</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-red-500 mr-2">✗</span>
+                    <span className="text-red-500 mr-2 text-lg">✗</span>
                     <span>Afternoon crashes</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-red-500 mr-2">✗</span>
+                    <span className="text-red-500 mr-2 text-lg">✗</span>
                     <span>Rapid tolerance</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-red-500 mr-2">✗</span>
+                    <span className="text-red-500 mr-2 text-lg">✗</span>
                     <span>Heart palpitations</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="card-scientific border-l-4 border-yellow-500">
+              <div className="card-scientific border-l-4 border-yellow-500 hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">
                   <div className="text-3xl mr-3">💊</div>
                   <h3 className="text-xl font-semibold text-gray-900">Prescription Stims</h3>
                 </div>
                 <ul className="space-y-2 text-gray-600 text-sm">
                   <li className="flex items-start">
-                    <span className="text-yellow-600 mr-2">✗</span>
+                    <span className="text-yellow-600 mr-2 text-lg">✗</span>
                     <span>Overstimulation</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-yellow-600 mr-2">✗</span>
+                    <span className="text-yellow-600 mr-2 text-lg">✗</span>
                     <span>Sleep disruption</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-yellow-600 mr-2">✗</span>
+                    <span className="text-yellow-600 mr-2 text-lg">✗</span>
                     <span>Requires prescription</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-yellow-600 mr-2">✗</span>
+                    <span className="text-yellow-600 mr-2 text-lg">✗</span>
                     <span>Dependency risk</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="card-scientific border-l-4 border-accent bg-gradient-to-br from-white to-accent/5">
+              <div className="card-scientific border-l-4 border-accent bg-gradient-to-br from-white to-accent/5 shadow-lg hover:shadow-glow-green transition-all">
                 <div className="flex items-center mb-4">
                   <div className="text-3xl mr-3">✓</div>
                   <h3 className="text-xl font-semibold text-primary">NeuroDrive</h3>
                 </div>
                 <ul className="space-y-2 text-gray-700 text-sm font-medium">
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
+                    <span className="text-accent mr-2 text-lg">✓</span>
                     <span>Calm, focused energy</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
+                    <span className="text-accent mr-2 text-lg">✓</span>
                     <span>8-12 hour duration</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
+                    <span className="text-accent mr-2 text-lg">✓</span>
                     <span>No prescription needed</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-accent mr-2">✓</span>
+                    <span className="text-accent mr-2 text-lg">✓</span>
                     <span>Zero crashes or jitters</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="text-center p-8 bg-white rounded-xl border-2 border-accent/20">
+            <div className="text-center p-8 bg-white rounded-xl border-2 border-accent/20 shadow-md">
               <p className="text-xl text-gray-800 font-medium">
                 You need <span className="text-accent font-bold">reliable cognitive support</span> 
                 <br className="hidden md:block" />
@@ -241,55 +361,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section id="how-it-works" className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <span className="badge mb-4">Adaptogenic Mechanism</span>
-              <h2 className="mb-6 text-primary">
-                How NeuroDrive Works
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our proprietary adaptogenic amino derivative complex supports your brain's natural 
-                dopamine production for sustained motivation and focus — without artificial stimulation
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="card-scientific text-center group hover:shadow-glow-green">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
-                  <span className="text-3xl">🧠</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">Supports Focus</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Helps maintain clear thinking and sustained attention throughout your workday. 
-                  Crystal-clear mental clarity without overstimulation.
-                </p>
-              </div>
-
-              <div className="card-scientific text-center group hover:shadow-glow-green">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
-                  <span className="text-3xl">⚡</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">Promotes Drive</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Supports natural motivation and mental energy for 8-12 hours. 
-                  No peaks, no crashes — just consistent performance.
-                </p>
-              </div>
-
-              <div className="card-scientific text-center group hover:shadow-glow-green">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
-                  <span className="text-3xl">💪</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">Boosts Endurance</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Helps reduce mental fatigue and supports work capacity. 
-                  Stay sharp when others burn out.
-                </p>
-              </div>
-            </div>
 
             {/* Механізм дії */}
             <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-200">
