@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
@@ -29,7 +27,7 @@ export default function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Science', href: '#how-it-works' },
+    { name: 'How It Works', href: '#how-it-works' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -42,7 +40,7 @@ export default function Header() {
     >
       <nav className="container-custom">
         <div className="flex justify-between items-center h-20 sm:h-24">
-          {/* Logo - збільшений розмір */}
+          {/* Logo */}
           <Link 
             href="/" 
             className="flex items-center space-x-4 group"
@@ -50,17 +48,17 @@ export default function Header() {
           >
             <div className="relative w-14 h-14 sm:w-16 sm:h-16 transition-transform duration-300 group-hover:scale-110">
               <Image 
-                src="/images/nora_logo.svg" 
-                alt="NORA Logo" 
+                src="/images/neurodrive_logo.svg" 
+                alt="NeuroDrive Logo" 
                 fill
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl sm:text-3xl font-bold text-primary leading-none">NORA</span>
+              <span className="text-2xl sm:text-3xl font-bold text-primary leading-none">NeuroDrive</span>
               <span className="text-[10px] sm:text-xs text-gray-600 tracking-wide font-medium mt-0.5">
-                Nootropic Research Alliance
+                Adaptogenic Performance Formula
               </span>
             </div>
           </Link>
@@ -78,7 +76,7 @@ export default function Header() {
               </Link>
             ))}
             <Link href="/checkout" className="btn-primary text-sm py-2.5 px-6">
-              Get NORA
+              Get NeuroDrive
             </Link>
           </div>
 
@@ -130,7 +128,7 @@ export default function Header() {
                   style={{ animationDelay: '0.4s' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get NORA
+                  Get NeuroDrive
                 </Link>
               </div>
             </div>
