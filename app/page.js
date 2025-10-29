@@ -655,7 +655,7 @@ export default function Home() {
                   icon: '💡',
                   title: 'The Fog Lifts Fast',
                   desc: 'Within 20-40 minutes you'll feel the haze lift. Mental clarity returns. No more staring at your screen in a daze.',
-                  quote: "It's like turning the lights back on. Suddenly I could think again."
+                  quote: 'It's like turning the lights back on. Suddenly I could think again.'
                 },
                 {
                   icon: '🎯',
