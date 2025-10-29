@@ -24,16 +24,12 @@ export default function Home() {
   // Simulate recent purchases notification
   useEffect(() => {
     const locations = [
-       { city: 'Berlin', country: 'Germany', flag: '🇩🇪' },
-  { city: 'London', country: 'UK', flag: '🇬🇧' },
-  { city: 'Amsterdam', country: 'Netherlands', flag: '🇳🇱' },
-  { city: 'Paris', country: 'France', flag: '🇫🇷' },
-  { city: 'Prague', country: 'Czech Republic', flag: '🇨🇿' },
-      { city: 'Warsaw', country: 'Poland', flag: '🇵🇱' },
       { city: 'Berlin', country: 'Germany', flag: '🇩🇪' },
       { city: 'London', country: 'UK', flag: '🇬🇧' },
       { city: 'Amsterdam', country: 'Netherlands', flag: '🇳🇱' },
       { city: 'Paris', country: 'France', flag: '🇫🇷' },
+      { city: 'Prague', country: 'Czech Republic', flag: '🇨🇿' },
+      { city: 'Warsaw', country: 'Poland', flag: '🇵🇱' },
     ]
     
     const showPurchase = () => {
@@ -57,7 +53,7 @@ export default function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       setStockCount(prev => Math.max(35, prev - 1))
-    }, 180000) // Every 3 minutes
+    }, 180000)
     return () => clearInterval(interval)
   }, [])
 
@@ -124,7 +120,7 @@ export default function Home() {
                 <svg className="w-3 h-3 mr-1.5 animate-pulse-slow" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                Pharmaceutical-Grade Adaptogenic Formula
+                Pharmaceutical-Grade Dopamine Support Formula
               </span>
 
               {/* Urgency Badges Row */}
@@ -149,20 +145,20 @@ export default function Home() {
             </div>
 
             <h1 className="text-center mb-4 sm:mb-6 leading-tight text-primary animate-fade-in-up px-4" style={{animationDelay: '0.1s'}}>
-              Mental Performance
+              From Fog to Flow
               <br />
-              <span className="text-gradient-green">On Demand</span>
+              <span className="text-gradient-green">Without the Crash</span>
             </h1>
             
             <p className="text-center text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-gray-700 max-w-3xl mx-auto animate-fade-in-up px-4" style={{animationDelay: '0.2s'}}>
-              NeuroDrive delivers <strong className="text-accent">sustained focus</strong>, 
-              <strong className="text-accent"> natural motivation</strong>, and 
-              <strong className="text-accent"> mental endurance</strong> — 
-              without the crash.
+              Turn the lights back on in your brain. NeuroDrive restores <strong className="text-accent">natural drive</strong>, 
+              <strong className="text-accent"> mental clarity</strong>, and 
+              <strong className="text-accent"> sustained focus</strong> — 
+              without stimulants or jitters.
             </p>
             
             <p className="text-center text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 animate-fade-in-up px-4" style={{animationDelay: '0.3s'}}>
-              Sublingual Drops • Adaptogenic Amino Derivative Complex • Rapid Absorption
+              For Founders, Coders & Builders Who Can't Afford an Off Day
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16 animate-fade-in-up px-4" style={{animationDelay: '0.4s'}}>
@@ -170,11 +166,10 @@ export default function Home() {
                 href="/checkout" 
                 className="btn-primary btn-ripple text-base group inline-flex items-center justify-center relative overflow-hidden"
               >
-                <span className="relative z-10">Claim Your Bottle Now</span>
+                <span className="relative z-10">Get NeuroDrive Now</span>
                 <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
-                {/* Shine effect */}
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
               </Link>
               <a 
@@ -210,7 +205,7 @@ export default function Home() {
               ))}
             </div>
 
-            {/* TRUST INDICATORS - EmergingEra style */}
+            {/* TRUST INDICATORS */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
               <div className="flex items-center">
                 <svg className="w-5 h-5 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -223,7 +218,7 @@ export default function Home() {
                   <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
                   <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" />
                 </svg>
-                <span className="font-medium">Fast Shipping</span>
+                <span className="font-medium">Fast EU Shipping</span>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -262,19 +257,152 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem Section - ENHANCED */}
+      {/* WHY YOUR BRAIN FEELS BROKEN - New Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-center mb-4 text-primary">
+              Why Your Brain Feels Broken
+            </h2>
+            <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
+              It's not your fault. Modern life is systematically depleting your dopamine.
+            </p>
+
+            <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border-2 border-gray-200 mb-8">
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center font-bold mr-4 text-xl">
+                    📱
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg text-gray-900 mb-2">Dopamine Burnout</h4>
+                    <p className="text-gray-700">
+                      Endless notifications, social media, and constant stimulation have hijacked your brain's reward system. 
+                      Your dopamine pathways are exhausted from overstimulation.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center font-bold mr-4 text-xl">
+                    ☕
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg text-gray-900 mb-2">Stimulant Dependency</h4>
+                    <p className="text-gray-700">
+                      Caffeine and energy drinks force dopamine release, creating tolerance and dependency. 
+                      You need more to feel less — trapped in a cycle of crashes and jitters.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center font-bold mr-4 text-xl">
+                    😰
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg text-gray-900 mb-2">Chronic Stress</h4>
+                    <p className="text-gray-700">
+                      Your stress response is constantly activated. High cortisol levels suppress dopamine production, 
+                      leaving you foggy, unmotivated, and mentally exhausted.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center p-8 bg-accent/5 rounded-xl border-2 border-accent/20">
+              <p className="text-xl text-gray-800 font-medium mb-2">
+                The solution isn't more stimulation — it's <span className="text-accent font-bold">restoration</span>
+              </p>
+              <p className="text-gray-600">
+                Your brain needs to rebuild its natural dopamine tone. That's exactly what NeuroDrive does.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section - COMPARISON TABLE */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-center mb-4 text-primary">
-              Traditional Stimulants Fall Short
+              NeuroDrive vs Everything Else
             </h2>
             <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-              Coffee, energy drinks, and prescription stimulants create more problems than they solve
+              Why high performers are switching from stimulants to adaptogenic support
             </p>
             
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="card-scientific border-l-4 border-red-500 hover:shadow-xl transition-shadow">
+            {/* Mobile-friendly comparison */}
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden border-2 border-gray-200">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Feature</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">Coffee</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">Modafinil</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-700">Adderall</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold bg-accent/10 text-primary">NeuroDrive</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr>
+                    <td className="px-6 py-4 text-sm text-gray-700 font-medium">No Jitters</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl bg-accent/5">✅</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-6 py-4 text-sm text-gray-700 font-medium">No Crash</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl bg-accent/5">✅</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 text-sm text-gray-700 font-medium">No Tolerance</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl bg-accent/5">✅</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-6 py-4 text-sm text-gray-700 font-medium">Mood Support</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
+                    <td className="px-6 py-4 text-center text-2xl bg-accent/5">✅</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 text-sm text-gray-700 font-medium">Legal/Non-Rx</td>
+                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl bg-accent/5">✅</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="px-6 py-4 text-sm text-gray-700 font-medium">8-12h Duration</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                    <td className="px-6 py-4 text-center text-2xl">✅</td>
+                    <td className="px-6 py-4 text-center text-2xl bg-accent/5">✅</td>
+                  </tr>
+                  <tr>
+                    <td className="px-6 py-4 text-sm text-gray-700 font-medium">Calm Focus</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl">⚠️</td>
+                    <td className="px-6 py-4 text-center text-2xl">❌</td>
+                    <td className="px-6 py-4 text-center text-2xl bg-accent/5">✅</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile cards version */}
+            <div className="md:hidden grid gap-6">
+              <div className="card-scientific border-l-4 border-red-500">
                 <div className="flex items-center mb-4">
                   <div className="text-3xl mr-3">☕</div>
                   <h3 className="text-xl font-semibold text-gray-900">Coffee</h3>
@@ -290,29 +418,17 @@ export default function Home() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-red-500 mr-2 text-lg">✗</span>
-                    <span>Rapid tolerance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-red-500 mr-2 text-lg">✗</span>
-                    <span>Heart palpitations</span>
+                    <span>Rapid tolerance builds</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="card-scientific border-l-4 border-yellow-500 hover:shadow-xl transition-shadow">
+              <div className="card-scientific border-l-4 border-yellow-500">
                 <div className="flex items-center mb-4">
                   <div className="text-3xl mr-3">💊</div>
-                  <h3 className="text-xl font-semibold text-gray-900">Prescription Stims</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">Prescription Stimulants</h3>
                 </div>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-yellow-600 mr-2 text-lg">✗</span>
-                    <span>Overstimulation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-yellow-600 mr-2 text-lg">✗</span>
-                    <span>Sleep disruption</span>
-                  </li>
                   <li className="flex items-start">
                     <span className="text-yellow-600 mr-2 text-lg">✗</span>
                     <span>Requires prescription</span>
@@ -321,10 +437,14 @@ export default function Home() {
                     <span className="text-yellow-600 mr-2 text-lg">✗</span>
                     <span>Dependency risk</span>
                   </li>
+                  <li className="flex items-start">
+                    <span className="text-yellow-600 mr-2 text-lg">✗</span>
+                    <span>Sleep disruption</span>
+                  </li>
                 </ul>
               </div>
 
-              <div className="card-scientific border-l-4 border-accent bg-gradient-to-br from-white to-accent/5 shadow-lg hover:shadow-glow-green transition-all">
+              <div className="card-scientific border-l-4 border-accent bg-gradient-to-br from-white to-accent/5 shadow-lg">
                 <div className="flex items-center mb-4">
                   <div className="text-3xl mr-3">✓</div>
                   <h3 className="text-xl font-semibold text-primary">NeuroDrive</h3>
@@ -340,21 +460,19 @@ export default function Home() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2 text-lg">✓</span>
-                    <span>No prescription needed</span>
+                    <span>Zero crashes or jitters</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-accent mr-2 text-lg">✓</span>
-                    <span>Zero crashes or jitters</span>
+                    <span>No prescription needed</span>
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="text-center p-8 bg-white rounded-xl border-2 border-accent/20 shadow-md">
+            <div className="mt-12 text-center p-8 bg-white rounded-xl border-2 border-accent/20 shadow-md">
               <p className="text-xl text-gray-800 font-medium">
-                You need <span className="text-accent font-bold">reliable cognitive support</span> 
-                <br className="hidden md:block" />
-                that works with your brain — not against it
+                Stop forcing your brain — start <span className="text-accent font-bold">supporting it</span>
               </p>
             </div>
           </div>
@@ -369,13 +487,13 @@ export default function Home() {
               How NeuroDrive Works
             </h2>
             <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-              A sophisticated adaptogenic mechanism that supports your brain's natural performance
+              A sophisticated adaptogenic mechanism that restores your brain's natural performance — not forces it
             </p>
 
             {/* Механізм дії */}
             <div className="bg-gray-50 p-8 md:p-12 rounded-2xl border border-gray-200">
               <h3 className="text-2xl font-semibold mb-8 text-primary text-center">
-                The Adaptogenic Advantage
+                The Dopamine Reset Mechanism
               </h3>
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -383,10 +501,11 @@ export default function Home() {
                     1
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-primary mb-2">Natural Dopamine Support</h4>
+                    <h4 className="font-semibold text-lg text-primary mb-2">Restores Dopamine Tone</h4>
                     <p className="text-gray-700">
-                      Supports your brain's natural dopamine production pathways rather than forcing artificial release. 
-                      This maintains long-term effectiveness without depletion.
+                      Unlike stimulants that force dopamine release and deplete your reserves, NeuroDrive supports 
+                      your brain's natural ability to produce and regulate dopamine. It upregulates the enzymes 
+                      responsible for dopamine synthesis — rebuilding your baseline motivation over time.
                     </p>
                   </div>
                 </div>
@@ -396,10 +515,11 @@ export default function Home() {
                     2
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-primary mb-2">Balanced Energy Profile</h4>
+                    <h4 className="font-semibold text-lg text-primary mb-2">Reduces Stress Response</h4>
                     <p className="text-gray-700">
-                      Unique adaptogenic properties provide mental energy while supporting calm focus. 
-                      No jitters, no anxiety — just focused confidence.
+                      Simultaneously calms overactive stress systems. Where stimulants spike cortisol and anxiety, 
+                      NeuroDrive's adaptogenic properties normalize your stress response — delivering focus with calm, 
+                      not frantic energy.
                     </p>
                   </div>
                 </div>
@@ -409,10 +529,11 @@ export default function Home() {
                     3
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-primary mb-2">Adaptive Restoration</h4>
+                    <h4 className="font-semibold text-lg text-primary mb-2">Builds Mental Endurance</h4>
                     <p className="text-gray-700">
-                      Works as an actoprotector to support mental adaptability and stress resilience. 
-                      Enhances your brain's natural capacity rather than overriding it.
+                      Works as an actoprotector — a compound that increases your capacity to perform under stress. 
+                      Rather than depleting you like caffeine, it strengthens your brain's resilience, letting you 
+                      maintain peak performance for 8-12 hours without crashes.
                     </p>
                   </div>
                 </div>
@@ -424,12 +545,42 @@ export default function Home() {
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
                   </svg>
                   <div>
-                    <p className="text-gray-700 italic mb-2">
-                      "This feels like the ultimate 'balancer' for my neurotransmitters. Energy without anxiety."
+                    <p className="text-gray-700 font-medium mb-1">The Bottom Line:</p>
+                    <p className="text-gray-600 italic">
+                      "It's like someone took their foot off my brain's brake pedal. The mental drag is just... gone."
                     </p>
-                    <p className="text-sm font-medium text-gray-600">— Verified Customer Review</p>
+                    <p className="text-sm font-medium text-gray-600 mt-2">— Jake M., Software Engineer</p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Scientific backing */}
+            <div className="mt-8 grid md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl border-2 border-gray-200">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-2xl">🧬</span>
+                  </div>
+                  <h4 className="font-semibold text-gray-900">Genetic-Level Support</h4>
+                </div>
+                <p className="text-sm text-gray-600">
+                  Research shows it increases expression of tyrosine hydroxylase — the rate-limiting enzyme 
+                  for dopamine production. Your brain learns to make more dopamine naturally.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-xl border-2 border-gray-200">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-3">
+                    <span className="text-2xl">⚖️</span>
+                  </div>
+                  <h4 className="font-semibold text-gray-900">Balanced, Not Forced</h4>
+                </div>
+                <p className="text-sm text-gray-600">
+                  Unlike amphetamines that flood receptors, or caffeine that blocks adenosine, NeuroDrive 
+                  works with your brain's natural systems — which is why there's no crash or dependency.
+                </p>
               </div>
             </div>
           </div>
@@ -444,85 +595,149 @@ export default function Home() {
               What You'll Experience
             </h2>
             <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-              Documented benefits from extensive research and thousands of user reports
+              Real effects documented by thousands of high performers
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  icon: '✨',
-                  title: 'Natural Motivation',
-                  desc: 'Supports internal drive to act within 20-40 minutes. Feel ready to tackle your tasks.'
+                  icon: '💡',
+                  title: 'Mental Fog Lifts',
+                  desc: 'Users describe it as "turning the lights back on." Clear thinking returns within 20-40 minutes. No more staring at screens in a daze.'
                 },
                 {
                   icon: '🎯',
-                  title: 'Laser Focus',
-                  desc: 'Helps clear brain fog and supports sustained concentration throughout your workday.'
+                  title: 'Natural Motivation Returns',
+                  desc: 'That internal drive to act — the "willingness to move" — comes back. You stop procrastinating. Tasks that felt impossible suddenly feel doable.'
+                },
+                {
+                  icon: '⚡',
+                  title: 'Flow State Access',
+                  desc: 'Hours of sustained deep work become possible again. One developer said: "I coded for 6 hours straight and it felt effortless."'
                 },
                 {
                   icon: '😌',
-                  title: 'Calm Drive',
-                  desc: 'Energy plus mental clarity equals peak performance. Supports composure under pressure.'
+                  title: 'Calm Confidence',
+                  desc: 'Energy plus clarity minus anxiety. No jitters. No racing thoughts. Just focused composure under pressure.'
                 },
                 {
                   icon: '🔋',
-                  title: 'Zero Crashes',
-                  desc: 'Steady all-day support. No withdrawal or rebound fatigue when effects wear off.'
+                  title: 'All-Day Endurance',
+                  desc: 'Steady 8-12 hour duration. Stay sharp from morning standup to late-night debugging sessions. No 3pm wall.'
                 },
                 {
-                  icon: '💯',
-                  title: 'Non-Habit Forming',
-                  desc: 'Use daily or cycle as needed. Adaptogenic mechanism maintains effectiveness long-term.'
-                },
-                {
-                  icon: '⚙️',
-                  title: 'Sublingual Delivery',
-                  desc: '2-4 drops under tongue for rapid absorption. Bypasses digestive system for faster effects.'
+                  icon: '😊',
+                  title: 'Mood Elevation',
+                  desc: 'Dopamine isn\'t just about focus — it\'s motivation and mood. Users report feeling more upbeat, social, and engaged.'
                 }
               ].map((benefit, idx) => (
                 <div key={idx} className="card-scientific flex items-start group hover:shadow-glow-green">
                   <div className="text-4xl mr-4 group-hover:scale-110 transition-transform">{benefit.icon}</div>
                   <div>
                     <h4 className="font-semibold text-lg mb-2 text-primary">{benefit.title}</h4>
-                    <p className="text-gray-600 text-sm">{benefit.desc}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{benefit.desc}</p>
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-12 text-center p-8 bg-white rounded-xl border-l-4 border-accent shadow-md">
+              <p className="text-lg text-gray-700 mb-2">
+                <span className="font-semibold text-primary">"I feel like myself again</span> — 
+                motivated, upbeat, driven. It's not overstimulation. It's restoration."
+              </p>
+              <p className="text-sm text-gray-500">— Sarah K., Startup Founder</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-padding bg-white">
+      {/* FOR BUILDERS SECTION - Identity-based */}
+      <section className="section-padding bg-white border-t-2 border-accent/10">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="mb-6 text-primary">
+              For Those Who Build, Code & Create
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto">
+              Your brain is your leverage. When focus and drive are your superpowers, 
+              this is your unfair advantage.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="p-6 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-accent hover:shadow-lg transition-all">
+                <div className="text-4xl mb-3">👨‍💻</div>
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">For Developers</h3>
+                <p className="text-sm text-gray-600">
+                  Ship features faster. Debug without mental fatigue. Stay in flow during marathon coding sessions.
+                </p>
+              </div>
+
+              <div className="p-6 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-accent hover:shadow-lg transition-all">
+                <div className="text-4xl mb-3">🚀</div>
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">For Founders</h3>
+                <p className="text-sm text-gray-600">
+                  Lead with clarity. Make better decisions. Have energy for your team even after 12-hour days.
+                </p>
+              </div>
+
+              <div className="p-6 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-accent hover:shadow-lg transition-all">
+                <div className="text-4xl mb-3">🎓</div>
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">For Researchers</h3>
+                <p className="text-sm text-gray-600">
+                  Process complex information faster. Write papers without brain fog. Study for hours with retention.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl border-2 border-accent/20">
+              <p className="text-2xl font-semibold text-primary mb-3">
+                "My mind is my most valuable asset"
+              </p>
+              <p className="text-lg text-gray-700">
+                Then give it what it needs to win. Not overstimulation. Not depletion. 
+                Just balanced, sustainable cognitive performance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials - ENHANCED with context */}
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <h2 className="text-center mb-4 text-primary">
-            What High Performers Say
+            Real Results From Real Users
           </h2>
-          <p className="text-center text-gray-600 mb-12">Real experiences from the biohacker community</p>
+          <p className="text-center text-gray-600 mb-12">
+            What happens when you actually restore your dopamine tone
+          </p>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
                 rating: 5,
-                text: "Finally found something that actually works. Motivation kicked in within 30 minutes, lasted my entire workday. No jitters, no crash.",
-                author: "Alex M.",
-                role: "Software Engineer"
+                text: "It's like turning the lights back on in my brain. I coded for 6 hours straight in flow — something I haven't felt in years. No jitters, no crash, just pure focused calm.",
+                author: "Jake M.",
+                role: "Software Engineer",
+                context: "After 2 weeks of daily use"
               },
               {
                 rating: 5,
-                text: "This is the dopamine support I've been looking for. Calm, steady flow of energy and drive. I'm getting so much more done.",
+                text: "Finally found the dopamine support I've been looking for. Calm, steady energy and drive. I'm getting through my to-do list without that constant mental resistance. This is the real deal.",
                 author: "Sarah K.",
-                role: "Entrepreneur"
+                role: "Startup Founder",
+                context: "Uses 4 drops every morning"
               },
               {
                 rating: 5,
-                text: "Feels like someone turned on a switch in my brain. Clear thinking, sustained focus, and I actually feel good while working.",
+                text: "Feels like someone took their foot off my brain's brake pedal. The mental drag is just gone. I actually look forward to studying now instead of dreading it.",
                 author: "Michael R.",
-                role: "Grad Student"
+                role: "Grad Student",
+                context: "Studying for comprehensive exams"
               }
             ].map((review, idx) => (
-              <div key={idx} className="card-scientific">
+              <div key={idx} className="card-scientific hover:shadow-xl transition-shadow">
                 <div className="flex mb-3">
                   {[...Array(review.rating)].map((_, i) => (
                     <svg key={i} className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
@@ -531,47 +746,58 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-gray-700 mb-4 italic leading-relaxed">"{review.text}"</p>
-                <div>
+                <div className="border-t pt-4 mt-4">
                   <p className="text-sm font-semibold text-gray-900">{review.author}</p>
-                  <p className="text-xs text-gray-500">{review.role}</p>
+                  <p className="text-xs text-gray-600">{review.role}</p>
+                  <p className="text-xs text-accent mt-1 font-medium">{review.context}</p>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">Join 1,247+ high performers who've reclaimed their cognitive edge</p>
+            <Link href="/checkout" className="btn-primary inline-flex items-center">
+              Get Your Bottle Now
+              <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Why Sublingual Drops */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-custom max-w-5xl mx-auto">
           <h2 className="text-center mb-4 text-primary">
-            Why Sublingual Drops?
+            Why Sublingual Drops Beat Capsules
           </h2>
           <p className="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
-            Sublingual delivery offers significant advantages over capsules and powders
+            Delivery method matters. Here's why sublingual is superior.
           </p>
           
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 icon: '🚀',
-                title: 'Rapid Absorption',
-                desc: 'Sublingual delivery allows effects within 20-40 minutes. Bypasses digestive system for faster onset and higher bioavailability.'
+                title: 'Faster Onset',
+                desc: 'Effects within 20-40 minutes vs 60-90 minutes for capsules. Absorption through mucous membranes bypasses digestive breakdown.'
+              },
+              {
+                icon: '💧',
+                title: 'Higher Bioavailability',
+                desc: 'More active compound reaches your system. Stomach acid doesn\'t degrade it. First-pass metabolism avoided.'
               },
               {
                 icon: '🎯',
                 title: 'Precision Dosing',
-                desc: 'Fine-tune your dose with drop accuracy. Start with 2 drops, adjust as needed. Impossible with fixed-dose capsules.'
-              },
-              {
-                icon: '💧',
-                title: 'Enhanced Bioavailability',
-                desc: 'Absorption through mucous membranes delivers more active compound to your system compared to oral capsules.'
+                desc: 'Start with 2 drops, adjust to 4 if needed. Fine-tune your dose — impossible with fixed-dose pills.'
               },
               {
                 icon: '👌',
                 title: 'Ultimate Convenience',
-                desc: 'Pocket-sized bottle. 2-4 drops under tongue, hold 60 seconds, swallow. Take anywhere, anytime. No water needed.'
+                desc: 'Pocket-sized bottle. Drop under tongue, hold 60 seconds, swallow. No water needed. Take anywhere.'
               }
             ].map((feature, idx) => (
               <div key={idx} className="card-scientific flex items-start group hover:shadow-glow-green">
@@ -584,28 +810,88 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-12 p-8 bg-white rounded-xl border-2 border-accent/20 text-center">
+          <div className="mt-12 p-8 bg-gradient-to-br from-gray-50 to-white rounded-xl border-2 border-accent/20 text-center">
             <h3 className="text-xl font-semibold text-primary mb-3">Pharmaceutical Grade Quality</h3>
-            <p className="text-gray-700 mb-2">99.4% purity · Third-party tested · GMP certified facility</p>
-            <p className="text-sm text-gray-500 font-mono">Proprietary adaptogenic amino derivative complex · 30ml per bottle</p>
+            <p className="text-gray-700 mb-2">99.4% purity · Third-party lab tested · GMP certified facility</p>
+            <p className="text-sm text-gray-500 font-mono">Proprietary adaptogenic amino derivative complex · 30ml per bottle · 30-60 servings</p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* SAFETY & OBJECTIONS SECTION */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-center mb-4 text-primary">
+              Your Questions Answered
+            </h2>
+            <p className="text-center text-gray-600 text-lg mb-12">
+              We know you're skeptical. You should be. Here are the facts.
+            </p>
+
+            <div className="space-y-6">
+              {[
+                {
+                  question: "Is it safe?",
+                  answer: "Yes. Used clinically for decades with an excellent safety profile. Non-addictive, no organ strain. Unlike stimulants that stress your system, NeuroDrive supports your brain's natural adaptive capacity. Third-party lab tested for purity."
+                },
+                {
+                  question: "Is it legal?",
+                  answer: "100% legal for personal use in the EU and most countries. Not a controlled substance. No prescription required. It's banned for Olympic athletes (because it works for endurance), but it won't show up on standard employment drug tests."
+                },
+                {
+                  question: "Will I build tolerance?",
+                  answer: "No. Unlike caffeine or amphetamines that create rapid tolerance, the adaptogenic mechanism maintains effectiveness long-term. Many users report it works even better over time as your dopamine systems rebuild."
+                },
+                {
+                  question: "How is this different from Adderall or Modafinil?",
+                  answer: "Completely different mechanism. Those force dopamine release or block adenosine — creating dependency and side effects. NeuroDrive supports your brain's natural dopamine production and stress resilience. No prescription, no jitters, no crash."
+                },
+                {
+                  question: "Will it affect my sleep?",
+                  answer: "Not if taken in the morning or early afternoon. Duration is 8-12 hours. Unlike stimulants that can disrupt sleep architecture, some users report improved sleep quality from reduced stress."
+                },
+                {
+                  question: "What if it doesn't work for me?",
+                  answer: "14-day money-back guarantee. If you don't feel a noticeable difference in focus, motivation, and mental clarity, we'll refund you. No questions asked."
+                }
+              ].map((faq, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-xl border-2 border-gray-200 hover:border-accent transition-colors">
+                  <h3 className="font-semibold text-lg text-primary mb-3">{faq.question}</h3>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 p-8 bg-accent/5 rounded-xl border-2 border-accent/20 text-center">
+              <p className="text-lg text-gray-800 font-medium mb-2">
+                Still have questions?
+              </p>
+              <Link href="/faq" className="text-accent hover:text-accent-dark font-semibold inline-flex items-center">
+                View Full FAQ
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - ENHANCED */}
       <section className="section-padding bg-white border-t-2 border-accent/20">
         <div className="container-custom text-center max-w-3xl mx-auto">
           <h2 className="mb-6 text-primary">
-            Experience Mental Performance
+            Reclaim Your Drive.
             <br />
-            <span className="text-gradient-green">Without The Drawbacks</span>
+            <span className="text-gradient-green">Restore Your Edge.</span>
           </h2>
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-            Join thousands of biohackers, developers, and high performers who've discovered 
-            the NeuroDrive advantage. Risk-free trial with 14-day money-back guarantee.
+            Stop forcing your brain with stimulants. Start supporting it with adaptogenic restoration. 
+            Join 1,247+ high performers who've discovered the NeuroDrive advantage.
           </p>
           
-          {/* URGENCY BOX - EmergingEra style */}
+          {/* URGENCY BOX */}
           <div className="mb-8 p-6 bg-red-50 border-2 border-red-200 rounded-xl">
             <div className="flex items-center justify-center mb-3">
               <svg className="w-6 h-6 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -613,43 +899,51 @@ export default function Home() {
               </svg>
               <span className="text-red-700 font-bold text-lg">First Batch Selling Fast</span>
             </div>
-            <p className="text-red-700 font-medium">Only 47 bottles remaining in current stock. Next production run not scheduled for 4 weeks.</p>
+            <p className="text-red-700 font-medium mb-2">
+              Only {stockCount} bottles remaining in current stock.
+            </p>
+            <p className="text-red-600 text-sm">
+              Next production run not scheduled for 4 weeks. Don't miss this.
+            </p>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/checkout" className="btn-primary text-lg inline-flex items-center justify-center">
+            <Link href="/checkout" className="btn-primary text-lg inline-flex items-center justify-center group">
               <span>Get NeuroDrive Now</span>
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
-            <Link href="/faq" className="btn-secondary text-lg inline-flex items-center justify-center">
-              <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              View FAQ
-            </Link>
           </div>
 
-          <div className="flex items-center justify-center space-x-8 text-sm text-gray-600">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600 mb-8">
             <div className="flex items-center">
               <svg className="w-5 h-5 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>14-Day Guarantee</span>
+              <span className="font-medium">14-Day Money-Back Guarantee</span>
             </div>
             <div className="flex items-center">
               <svg className="w-5 h-5 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>Secure Checkout</span>
+              <span className="font-medium">Secure Encrypted Checkout</span>
             </div>
             <div className="flex items-center">
               <svg className="w-5 h-5 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span>Fast Delivery</span>
+              <span className="font-medium">Fast EU Delivery</span>
             </div>
+          </div>
+
+          <div className="p-6 bg-gray-50 rounded-xl border-2 border-gray-200">
+            <p className="text-gray-700 italic mb-2">
+              "Your brain is your most valuable asset. Don't settle for overstimulation or burnout."
+            </p>
+            <p className="text-sm text-gray-600">
+              Give it what it needs: balanced, sustainable dopamine support.
+            </p>
           </div>
         </div>
       </section>
