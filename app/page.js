@@ -264,7 +264,7 @@ export default function Home() {
             <h2 className="text-center mb-4 text-primary">
               Why You Feel Like a Zombie by 3 PM
               <br />
-              <span className="text-xl text-gray-600 font-normal">Even when you're doing everything "right"</span>
+              <span className="text-xl text-gray-600 font-normal">Even when you're doing everything 'right'</span>
             </h2>
             <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
               It's not your fault. Modern life is systematically depleting your dopamine — and nothing you've tried actually fixes the root cause.
@@ -543,7 +543,7 @@ export default function Home() {
                     </p>
                     <p className="text-sm text-gray-600 bg-white p-3 rounded border-l-4 border-accent">
                       <strong>What you'll feel:</strong> Within 20-40 minutes, mental fog starts lifting. 
-                      That "stuck in neutral" feeling disappears. Internal drive returns.
+                      That 'stuck in neutral' feeling disappears. Internal drive returns.
                     </p>
                   </div>
                 </div>
@@ -655,37 +655,37 @@ export default function Home() {
                   icon: '💡',
                   title: 'The Fog Lifts Fast',
                   desc: 'Within 20-40 minutes you'll feel the haze lift. Mental clarity returns. No more staring at your screen in a daze.',
-                  quote: '"It\'s like turning the lights back on. Suddenly I could think again."'
+                  quote: "It's like turning the lights back on. Suddenly I could think again."
                 },
                 {
                   icon: '🎯',
                   title: 'Internal Drive Returns',
-                  desc: 'That "willingness to move" comes back. You stop procrastinating. Tasks that felt impossible suddenly feel doable — even energizing.',
-                  quote: '"I actually wanted to tackle my to-do list. Haven\'t felt that in months."'
+                  desc: 'That 'willingness to move' comes back. You stop procrastinating. Tasks that felt impossible suddenly feel doable — even energizing.',
+                  quote: "I actually wanted to tackle my to-do list. Haven\'t felt that in months."
                 },
                 {
                   icon: '⚡',
                   title: 'Flow State On Demand',
                   desc: 'Ship features faster. Debug without mental fatigue. Write for hours with retention. 6-8 hour deep work sessions become normal again.',
-                  quote: '"I coded for 6 hours straight and it felt effortless. First time in years."'
+                  quote: "I coded for 6 hours straight and it felt effortless. First time in years."
                 },
                 {
                   icon: '😌',
                   title: 'Calm, Confident Focus',
                   desc: 'No jitters. No racing thoughts. No anxiety spike. Just steady composure and mental clarity under pressure.',
-                  quote: '"Energy without the edge. I can think clearly during standup now."'
+                  quote: "Energy without the edge. I can think clearly during standup now."
                 },
                 {
                   icon: '🔋',
                   title: 'All-Day Mental Endurance',
                   desc: 'Sharp at 4 PM like you were at 9 AM. No afternoon wall. Stay effective through late-night debugging or client calls. 8-12 hour duration.',
-                  quote: '"I don\'t fight the 3 PM slump anymore. It just doesn\'t happen."'
+                  quote: "I don't fight the 3 PM slump anymore. It just doesn\'t happen."
                 },
                 {
                   icon: '😊',
                   title: 'Mood & Social Boost',
                   desc: 'Dopamine isn\'t just focus — it\'s motivation, mood, and connection. Users report feeling more upbeat, witty, and engaged with their team.',
-                  quote: '"I\'m less irritable. Actually enjoying conversations again."'
+                  quote: "I'm less irritable. Actually enjoying conversations again."
                 }
               ].map((benefit, idx) => (
                 <div key={idx} className="card-scientific group hover:shadow-glow-green">
