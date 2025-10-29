@@ -691,7 +691,6 @@ export default function Home() {
     <p className="text-gray-700 text-sm leading-relaxed mb-3">{benefit.desc}</p>
     <p className="text-xs text-gray-600 italic border-l-4 border-accent/30 pl-3">{benefit.quote}</p>
   </div>
-))
               ))}
             </div>
 
