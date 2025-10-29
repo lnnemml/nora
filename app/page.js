@@ -651,51 +651,47 @@ export default function Home() {
             
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                {
-                  icon: '💡',
-                  title: 'The Fog Lifts Fast',
-                  desc: "Within 20-40 minutes you'll feel the haze lift. Mental clarity returns. No more staring at your screen in a daze.",
-                  quote: 'It's like turning the lights back on. Suddenly I could think again.'
-                },
-                {
-                  icon: '🎯',
-                  title: 'Internal Drive Returns',
-                  desc: "That 'willingness to move' comes back. You stop procrastinating. Tasks that felt impossible suddenly feel doable — even energizing.",
-                  quote: "I actually wanted to tackle my to-do list. Haven't felt that in months."
-                },
-                {
-                  icon: '⚡',
-                  title: 'Flow State On Demand',
-                  desc: 'Ship features faster. Debug without mental fatigue. Write for hours with retention. 6-8 hour deep work sessions become normal again.',
-                  quote: "I coded for 6 hours straight and it felt effortless. First time in years."
-                },
-                {
-                  icon: '😌',
-                  title: 'Calm, Confident Focus',
-                  desc: 'No jitters. No racing thoughts. No anxiety spike. Just steady composure and mental clarity under pressure.',
-                  quote: "Energy without the edge. I can think clearly during standup now."
-                },
-                {
-                  icon: '🔋',
-                  title: 'All-Day Mental Endurance',
-                  desc: 'Sharp at 4 PM like you were at 9 AM. No afternoon wall. Stay effective through late-night debugging or client calls. 8-12 hour duration.',
-                  quote: "I don't fight the 3 PM slump anymore. It just doesn't happen."
-                },
-                {
-                  icon: '😊',
-                  title: 'Mood & Social Boost',
-                  desc: "Dopamine isn't just focus — it's motivation, mood, and connection. Users report feeling more upbeat, witty, and engaged with their team.",
-                  quote: "I'm less irritable. Actually enjoying conversations again."
-                }
-              ].map((benefit, idx) => (
-                <div key={idx} className="card-scientific group hover:shadow-glow-green">
-                  <div className="flex items-start mb-3">
-                    <div className="text-4xl mr-4 group-hover:scale-110 transition-transform">{benefit.icon}</div>
-                    <h4 className="font-semibold text-lg text-primary">{benefit.title}</h4>
-                  </div>
-                  <p className="text-gray-700 text-sm leading-relaxed mb-3">{benefit.desc}</p>
-                  <p className="text-xs text-gray-600 italic border-l-4 border-accent/30 pl-3">{benefit.quote}</p>
-                </div>
+                [
+  {
+    icon: '↑',
+    title: 'The Fog Lifts Fast',
+    desc: 'Within 20-40 minutes you\'ll feel the haze lift. Mental clarity returns. No more staring at your code blank.',
+    quote: 'It\'s like turning the lights back on. Suddenly I could think again.'
+  },
+  {
+    icon: '📈',
+    title: 'Sustained Focus Without Crash',
+    desc: '8-12 hours of steady drive. No afternoon slump. No rebound fatigue.',
+    quote: 'I finally broke my caffeine addiction. Energy is smooth all day.'
+  },
+  {
+    icon: '⚖️',
+    title: 'No Tolerance Build-Up',
+    desc: 'Works the same on day 100 as day 1. No need to cycle or increase dose.',
+    quote: 'Month 3 and it\'s still as effective. No more upping my coffee intake.'
+  },
+  {
+    icon: '😌',
+    title: 'Calm Confidence',
+    desc: 'Focus with zen-like calm. Reduced anxiety, better stress resilience.',
+    quote: 'No jitters. Just clear, confident thinking under pressure.'
+  },
+  {
+    icon: '😊',
+    title: 'Mood & Social Boost',
+    desc: 'Dopamine isn\'t just focus — it\'s motivation, mood, and connection. Users report feeling more upbeat, witty, and engaged with their team.',
+    quote: "I'm less irritable. Actually enjoying conversations again."
+  }
+].map((benefit, idx) => (
+  <div key={idx} className="card-scientific group hover:shadow-glow-green">
+    <div className="flex items-start mb-3">
+      <div className="text-4xl mr-4 group-hover:scale-110 transition-transform">{benefit.icon}</div>
+      <h4 className="font-semibold text-lg text-primary">{benefit.title}</h4>
+    </div>
+    <p className="text-gray-700 text-sm leading-relaxed mb-3">{benefit.desc}</p>
+    <p className="text-xs text-gray-600 italic border-l-4 border-accent/30 pl-3">{benefit.quote}</p>
+  </div>
+))
               ))}
             </div>
 
