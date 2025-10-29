@@ -685,13 +685,15 @@ export default function Home() {
 ].map((benefit, idx) => (
   <div key={idx} className="card-scientific group hover:shadow-glow-green">
     <div className="flex items-start mb-3">
-      <div className="text-4xl mr-4 group-hover:scale-110 transition-transform">{benefit.icon}</div>
+      <div className="text-4xl mr-4 group-hover:scale-110 transition-transform">
+        {benefit.icon}
+      </div>
       <h4 className="font-semibold text-lg text-primary">{benefit.title}</h4>
     </div>
     <p className="text-gray-700 text-sm leading-relaxed mb-3">{benefit.desc}</p>
     <p className="text-xs text-gray-600 italic border-l-4 border-accent/30 pl-3">{benefit.quote}</p>
   </div>
-              ))}
+))}
             </div>
 
             <div className="mt-12 text-center p-8 bg-white rounded-xl border-l-4 border-accent shadow-md">
