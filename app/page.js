@@ -654,14 +654,14 @@ export default function Home() {
                 {
                   icon: '💡',
                   title: 'The Fog Lifts Fast',
-                  desc: 'Within 20-40 minutes you'll feel the haze lift. Mental clarity returns. No more staring at your screen in a daze.',
+                  desc: "Within 20-40 minutes you'll feel the haze lift. Mental clarity returns. No more staring at your screen in a daze.",
                   quote: 'It's like turning the lights back on. Suddenly I could think again.'
                 },
                 {
                   icon: '🎯',
                   title: 'Internal Drive Returns',
-                  desc: 'That 'willingness to move' comes back. You stop procrastinating. Tasks that felt impossible suddenly feel doable — even energizing.',
-                  quote: "I actually wanted to tackle my to-do list. Haven\'t felt that in months."
+                  desc: "That 'willingness to move' comes back. You stop procrastinating. Tasks that felt impossible suddenly feel doable — even energizing.",
+                  quote: "I actually wanted to tackle my to-do list. Haven't felt that in months."
                 },
                 {
                   icon: '⚡',
@@ -679,12 +679,12 @@ export default function Home() {
                   icon: '🔋',
                   title: 'All-Day Mental Endurance',
                   desc: 'Sharp at 4 PM like you were at 9 AM. No afternoon wall. Stay effective through late-night debugging or client calls. 8-12 hour duration.',
-                  quote: "I don't fight the 3 PM slump anymore. It just doesn\'t happen."
+                  quote: "I don't fight the 3 PM slump anymore. It just doesn't happen."
                 },
                 {
                   icon: '😊',
                   title: 'Mood & Social Boost',
-                  desc: 'Dopamine isn\'t just focus — it\'s motivation, mood, and connection. Users report feeling more upbeat, witty, and engaged with their team.',
+                  desc: "Dopamine isn't just focus — it's motivation, mood, and connection. Users report feeling more upbeat, witty, and engaged with their team.",
                   quote: "I'm less irritable. Actually enjoying conversations again."
                 }
               ].map((benefit, idx) => (
@@ -846,7 +846,7 @@ export default function Home() {
               {
                 icon: '💧',
                 title: 'Higher Bioavailability',
-                desc: 'More active compound reaches your system. Stomach acid doesn\'t degrade it. First-pass metabolism avoided.'
+                desc: "More active compound reaches your system. Stomach acid doesn't degrade it. First-pass metabolism avoided."
               },
               {
                 icon: '🎯',
